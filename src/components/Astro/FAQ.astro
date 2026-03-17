@@ -1,0 +1,23 @@
+---
+import FAQData from "./../../data/faq.json";
+---
+
+<div class="px-4 py-20 sm:py-40">
+    <h3 class="text-lg font-semibold text-blue-600 border-2 border-blue-600 rounded-lg p-2 mb-10 sm:w-4/5 sm:mx-auto sm:mb-20 text-center">
+        Tanya Jawab
+    </h3>
+
+    <div class="flex flex-col gap-4 sm:w-4/5 sm:mx-auto">
+        {
+            FAQData.map((val) => (
+                <div class="collapse collapse-arrow  border border-gray-500 ">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="text-md sm:text-lg font-medium collapse-title">{val.tanya}</div>
+                    <div class="collapse-content text-md sm:text-lg text-gray-500">
+                        <p>{val.jawab}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>

@@ -1,0 +1,38 @@
+---
+export type GalleryProps = {
+    images: Array<{ href: string; alt: string; pspWidth: string; pspHeight: string }>;
+};
+const { images } = Astro.props as GalleryProps;
+---
+
+<div id="gallery" class="grid grid-cols-3 gap-1">
+    {
+        images &&
+            images.length > 0 &&
+            images.map((val) => (
+                <div class="border border-gray-400 p-2 rounded-sm">
+                    <a href={val.href} data-pswp-width={val.pspWidth} data-pswp-height={val.pspHeight} target="_blank">
+                        <img src={val.href} alt={val.alt} class="w-full h-full" />
+                    </a>
+                </div>
+            ))
+    }
+</div>
+
+<script type="module">
+    import PhotoSwipeLightbox from "./../../../node_modules/photoswipe/dist/photoswipe-lightbox.esm.js";
+    import "./../../../node_modules/photoswipe/dist/photoswipe.css";
+
+    const lightbox = new PhotoSwipeLightbox({
+        // may select multiple "galleries"
+        gallery: "#gallery",
+
+        // Elements within gallery (slides)
+        children: "a",
+
+        // setup PhotoSwipe Core dynamic import
+        // pswpModule: () => import("/photoswipe/photoswipe.esm.js"),
+        pswpModule: () => import("./../../../node_modules/photoswipe/dist/photoswipe.esm.js"),
+    });
+    lightbox.init();
+</script>

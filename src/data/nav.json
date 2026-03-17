@@ -1,0 +1,6 @@
+[
+    {"label": "Beranda", "href": "/", "type": "nav"},
+    {"label": "Belanja", "href": "/belanja", "type": "nav"},
+    {"label": "Kontak", "href": "/kontak", "type": "nav"},
+    {"label": "Hubungi", "href": "https://wa.me/6287780122469", "type": "btn"}
+]

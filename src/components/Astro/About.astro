@@ -1,0 +1,37 @@
+---
+import Gallery from "./Gallery.astro";
+
+const images = [
+    { href: "/images/kabel1.jpg", alt: "kabel1", pspWidth: "450", pspHeight: "550" },
+    { href: "/images/gambar4.jpg", alt: "gambar4", pspWidth: "450", pspHeight: "550" },
+    { href: "/images/gambar5.jpg", alt: "gambar5", pspWidth: "550", pspHeight: "450" },
+    { href: "/images/gambar8.jpg", alt: "gambar8", pspWidth: "550", pspHeight: "450" },
+    { href: "/images/gambar7.jpg", alt: "gambar8", pspWidth: "550", pspHeight: "450" },
+    { href: "/images/gambar2.jpg", alt: "gambar8", pspWidth: "550", pspHeight: "450" },
+];
+---
+
+<div class="px-4 sm:w-[95%] sm:mx-auto py-15 sm:pb-50 sm:pt-30">
+    <h3 class="text-lg font-semibold text-blue-600 border-2 border-blue-600 rounded-lg p-2 mb-10 sm:mb-20 sm:w-4/5 sm:mx-auto text-center">
+        Tentang Kami
+    </h3>
+
+    <div class="flex flex-col gap-10 sm:items-center sm:flex-row sm:gap-50">
+        <div class="sm:flex-2 sm:order-1 sm:text-left sm:text-lg">
+            <p class="mb-3 text-justify">
+                Kami bergerak di bidang penyediaan alat instalasi jaringan internet dengan fokus pada kualitas dan keandalan produk. Kami
+                menawarkan berbagai macam peralatan yang dibutuhkan untuk membangun dan merawat jaringan internet, mulai dari kabel fiber
+                optic, konektor, hingga alat pendukung lainnya yang terjamin kualitasnya.
+            </p>
+
+            <p class="text-justify">
+                Sebagai mitra yang terpercaya, kami memastikan setiap produk yang kami jual memenu hi standar tertinggi, sehingga mendukung
+                kelancaran serta keberhasilan proyek instalasi jaringan Anda. Kami berkomitmen untuk memberikan solusi yang efisien dan
+                efektif, dengan harga yang kompetitif, tanpa mengurangi kualitas barang yang kami tawarkan.
+            </p>
+        </div>
+        <div class="mb-7 sm:flex-1 sm:order-2">
+            <Gallery images={images} />
+        </div>
+    </div>
+</div>

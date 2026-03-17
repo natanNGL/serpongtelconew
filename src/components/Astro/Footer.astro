@@ -1,0 +1,36 @@
+---
+import Contact from "./../../data/contact.json";
+import Address from "./../../data/address.json";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
+---
+
+<footer class="bg-gray-700">
+    <div class="pt-10 flex flex-col gap-8 sm:max-w-[95%] sm:mx-auto">
+        <div class="px-4 flex flex-col gap-10 sm:flex-row justify-between pb-5 sm:items-end">
+            <div class="flex flex-col gap-4 flex-1">
+                <p class="text-md font-bold sm:text-lg text-white">SERPONG TELCO</p>
+
+                <div class="flex gap-1 flex-col">
+                    {
+                        Contact.map((val) => (
+                            <div class="flex items-center gap-4 text-white text-sm font-semibold">
+                                {val.type === "phone" ? <FaWhatsapp size="18px" /> : <MdOutlineMail size="18px" />}
+                                <a href={val.link}>{val.label}</a>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="flex flex-col flex-1">
+                <p class="text-md font-bold sm:text-lg text-white sm:text-right">Alamat</p>
+                <p class="text-white text-sm sm:text-right">{Address.address}</p>
+            </div>
+        </div>
+
+        <div class="border-t border-white py-3">
+            <p class="font-semibold text-center text-white">Copyright © {new Date().getFullYear()} - SERPONG TELCO. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

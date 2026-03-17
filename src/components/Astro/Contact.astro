@@ -1,0 +1,37 @@
+---
+import DataContact from "./../../data/contact.json";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
+---
+
+<div class="flex flex-col sm:flex-row">
+    <div class="flex-1 p-4 flex flex-col gap-2 sm:order-2">
+        {
+            DataContact.map((val) => (
+                <div class=" rounded-md  p-4 bg-white flex items-center gap-4 shadow-xl">
+                    {val.type === "phone" ? (
+                        <FaWhatsapp size="22px" className="text-green-500" />
+                    ) : (
+                        <MdOutlineMail size="22px" className="text-yellow-500" />
+                    )}
+                    <a href={val.link} class="font-semibold">
+                        {val.label}
+                    </a>
+                </div>
+            ))
+        }
+    </div>
+    <div class="flex-2 flex flex-col gap-4 pb-6 rounded-lg sm:order-1">
+        <div class="w-full p-3">
+            <iframe
+                width="100%"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                class="h-150 rounded-2xl"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Serpong%20Telco&zoom=15&maptype=roadmap"
+            ></iframe>
+        </div>
+    </div>
+</div>
