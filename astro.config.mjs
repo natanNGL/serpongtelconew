@@ -18,4 +18,7 @@ export default defineConfig({
     integrations: [react(), icon(), sitemap()],
 
     outDir: "docs",
+    build: {
+        assets: "assets",
+    },
 });
