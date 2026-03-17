@@ -2,15 +2,18 @@
 import DataContact from "./../../data/contact.json";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { FaFacebookSquare } from "react-icons/fa";
 ---
 
-<div class="flex flex-col sm:flex-row">
+<div class="flex flex-col sm:flex-row h-screen">
     <div class="flex-1 p-4 flex flex-col gap-2 sm:order-2">
         {
             DataContact.map((val) => (
                 <div class=" rounded-md  p-4 bg-white flex items-center gap-4 shadow-xl">
                     {val.type === "phone" ? (
                         <FaWhatsapp size="22px" className="text-green-500" />
+                    ) : val.type === "fb" ? (
+                        <FaFacebookSquare size="22px" className="text-blue-600" />
                     ) : (
                         <MdOutlineMail size="22px" className="text-yellow-500" />
                     )}
@@ -21,7 +24,7 @@ import { MdOutlineMail } from "react-icons/md";
             ))
         }
     </div>
-    <div class="flex-2 flex flex-col gap-4 pb-6 rounded-lg sm:order-1">
+    <!-- <div class="flex-2 flex flex-col gap-4 pb-6 rounded-lg sm:order-1">
         <div class="w-full p-3">
             <iframe
                 width="100%"
@@ -33,5 +36,5 @@ import { MdOutlineMail } from "react-icons/md";
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Serpong%20Telco&zoom=15&maptype=roadmap"
             ></iframe>
         </div>
-    </div>
+    </div> -->
 </div>

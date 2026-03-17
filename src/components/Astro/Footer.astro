@@ -3,6 +3,7 @@ import Contact from "./../../data/contact.json";
 import Address from "./../../data/address.json";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { FaFacebookSquare } from "react-icons/fa";
 ---
 
 <footer class="bg-gray-700">
@@ -15,17 +16,18 @@ import { MdOutlineMail } from "react-icons/md";
                     {
                         Contact.map((val) => (
                             <div class="flex items-center gap-4 text-white text-sm font-semibold">
-                                {val.type === "phone" ? <FaWhatsapp size="18px" /> : <MdOutlineMail size="18px" />}
+                                {val.type === "phone" ? (
+                                    <FaWhatsapp size="18px" className="text-green-500" />
+                                ) : val.type === "fb" ? (
+                                    <FaFacebookSquare size="18px" className="text-blue-600" />
+                                ) : (
+                                    <MdOutlineMail size="18px" className="text-yellow-500" />
+                                )}
                                 <a href={val.link}>{val.label}</a>
                             </div>
                         ))
                     }
                 </div>
-            </div>
-
-            <div class="flex flex-col flex-1">
-                <p class="text-md font-bold sm:text-lg text-white sm:text-right">Alamat</p>
-                <p class="text-white text-sm sm:text-right">{Address.address}</p>
             </div>
         </div>
 
