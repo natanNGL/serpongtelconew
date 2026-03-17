@@ -17,5 +17,5 @@ export default defineConfig({
 
     integrations: [react(), icon(), sitemap()],
 
-    site: "https://websitekamu.com",
+    outDir: "docs",
 });
