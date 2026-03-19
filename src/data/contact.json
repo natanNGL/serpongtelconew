@@ -1,6 +1,6 @@
 [
     {"label": "087780122469", "link":"https://wa.me/6287780122469", "type": "phone"},
     {"label": "085691563960", "link":"https://wa.me/6285691563960", "type": "phone"},
-    {"label": "sales@serpongtelco.com", "link":"mailto://admin@serpongtelco.com", "type": "email"},
+    {"label": "sales@serpongtelco.com", "link":"mailto:sales@serpongtelco.com", "type": "email"},
     {"label": "Serpong Telco", "link":"https://facebook.com/serpong.telco", "type": "fb"}
 ]
