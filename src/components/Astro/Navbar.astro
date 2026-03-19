@@ -1,15 +1,17 @@
 ---
+type Props = {
+    nav: "Beranda" | "Produk" | "Kontak";
+};
 import Nav from "./../../data/nav.json";
 import { FaWhatsapp } from "react-icons/fa";
-const currentPath = Astro.url.pathname;
+
+const { nav } = Astro.props as Props;
 ---
 
 <nav class="border-b border-gray-300 px-4 py-4 sticky top-0 bg-white z-999">
     <div class="flex justify-between items-center sm:w-[95%] sm:mx-auto">
         <a href="/" class="text-xl font-semibold sm:font-bold sm:text-2xl">
-            <!-- <span class="text-red-700">SERPONG</span>
-            <span class="text-blue-600">TELCO</span> -->
-            <img src="/images/logo.png" alt="logo" class="w-[180px] h-[55px] sm:w-60 sm:h-16.25" />
+            <img src="/images/logo.png" alt="logo" class="w-45 h-13.75 sm:w-60 sm:h-16.25" />
         </a>
 
         <!-- MOBILE DROPWOWN MENU -->
@@ -28,7 +30,7 @@ const currentPath = Astro.url.pathname;
                                 class={
                                     val.type === "btn"
                                         ? "bg-green-500 rounded-md text-white mt-4 font-semibold"
-                                        : "" + ` text-sm ${currentPath === val.href ? "text-blue-600" : "text-black"}`
+                                        : "" + ` text-sm ${val.label === nav ? "text-blue-600" : "text-black"}`
                                 }
                             >
                                 <>
@@ -53,7 +55,7 @@ const currentPath = Astro.url.pathname;
                                 val.type === "btn"
                                     ? `bg-green-500 rounded-md text-white px-4 py-2 flex items-center gap-2 text-lg ms-4 `
                                     : "" +
-                                      ` text-lg font-semibold hover:text-blue-600 ${currentPath === val.href ? "text-blue-600" : "text-black"}`
+                                      ` text-lg font-semibold hover:text-blue-600 ${val.label === nav ? "text-blue-600" : "text-black"}`
                             }
                         >
                             <>

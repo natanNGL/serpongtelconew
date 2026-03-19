@@ -1,10 +1,14 @@
 ---
+type Props = {
+    title: string;
+    nav: "Beranda" | "Produk" | "Kontak";
+};
 import "./../styles/global.css";
 import Navbar from "./../components/Astro/Navbar.astro";
 import Footer from "./../components/Astro/Footer.astro";
 import WAFloating from "../components/Astro/WAFloating.astro";
 
-const { title = "Serpong Telco" } = Astro.props;
+const { title = "Serpong Telco", nav = "Beranda" } = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -19,7 +23,7 @@ const { title = "Serpong Telco" } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-[#eaeaea] flex flex-col">
-        <Navbar />
+        <Navbar nav={nav} />
         <main>
             <slot />
         </main>
